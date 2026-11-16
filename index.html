@@ -66,16 +66,28 @@
 
   <section id="introduction">
     <h2>Introduction</h2>
-    <p>This project addresses the critical challenge of medical non-adherence among elderly patients and individuals managing complex
-      chronic prescription schedules.</p>
-      <p> By implementing an automated, microcontroller-based system, the device actively alerts users 
-      via audible and visual cues when a dose is due while physically isolating remaining medications to prevent accidental double-dosing.</p>
-      <p>Ultimately, this solution eliminates dangerous human errors from healthcare management and securely logs compliance metrics onto a real-time web dashboard for caretakers to monitor remotely.
-    </p>
+    <p>This project addresses the widespread problem of medication non-adherence among elderly patients and individuals managing complex chronic conditions. Non-adherence is frequently caused by cognitive impairment, complicated dosing schedules, and physical limitations such as reduced dexterity or hearing loss. These factors lead to missed doses, accidental double-dosing, preventable hospitalizations, and increased burden on caregivers, while also reducing patient independence.</p>
+
+  <p>The project supports United Nations Sustainable Development Goal 3 (Good Health and Well-Being) and aligns with the World Health Organization’s emphasis on improving medication adherence. Medication adherence is defined as the extent to which a person’s medication-taking behavior matches the recommendations agreed upon with a healthcare provider. By reducing non-adherence, the device aims to lower preventable health complications, ease caregiver responsibilities, and support greater independence for users.</p>
+
+  <p>To achieve this, the team is developing a unified, user-friendly automatic pill dispenser prototype based on an Arduino microcontroller. The system uses a real-time clock (RTC) module for accurate scheduling and triggers synchronized audible buzzer alerts and visual LED flashes at the exact time a dose is due. At the scheduled interval, an Arduino-controlled servo motor dispenses a single dose from a custom 3D-printed or wooden storage enclosure, reducing reliance on difficult packaging and helping prevent double-dosing. The prototype also logs compliance data to a real-time web dashboard so caregivers can monitor adherence remotely. This design builds on existing Arduino-based reminder and dispensing projects by combining precise timekeeping, multi-sensory alerts, automated dispensing, and remote monitoring into a single cohesive system.</p>
+
+  <p>The project will be completed over the next month through the following milestones:</p>
+
+  <ul>
+    <li><strong>Precision Scheduling &amp; Automation (RTC &amp; Arduino Code):</strong> Program the Arduino with an RTC module to maintain accurate timekeeping and automatically trigger output signals within 1 second of programmed dose intervals across multiple test cycles.</li>
+    <li><strong>Audible Alert System (Buzzer):</strong> Wire and program a breadboard-mounted buzzer that reliably sounds an alarm immediately upon receiving a scheduled trigger and continues until the dose is dispensed or acknowledged.</li>
+    <li><strong>Visual Alert System (LED):</strong> Configure a breadboard-mounted LED circuit that flashes clearly at the exact moment a dose is due, supporting accessibility for users with hearing impairments.</li>
+    <li><strong>Custom Medication Storage Contraption:</strong> Design and fabricate (or adapt) a dedicated storage enclosure using 3D printing or woodwork that safely holds multiple doses and simplifies loading and access.</li>
+    <li><strong>Automated Dispensing Mechanism (Servo Motor):</strong> Integrate and calibrate a servo motor mechanism (such as a rotating compartment or cylinder) controlled by the Arduino to reliably dispense a single dose.</li>
+  </ul>
+
+  <p>Medication dispensing reliability is the primary anticipated challenge. Pills may become stuck, multiple pills may be released at once, or the servo motor may fail to align correctly with the selected compartment, resulting in incorrect dosing. To mitigate this, the dispenser design will be tested with different pill sizes, and the servo motor will be carefully calibrated through repeated testing to ensure accurate and consistent operation.</p>
+
   </section>
 
   <section id="circuit-diagram">
-    <h2>Circuit Diagram</h2>
+    <h2>Circuit Diagram:</h2>
     <p>The ultrasonic sensor measures distance; the Arduino activates LEDs and the buzzer according to distance
       thresholds.</p>
     <img src="collision-warning-system-Arduino.jpg" alt="Arduino collision warning system">
@@ -297,19 +309,47 @@ void loop() {
     <em>Automatic Pill or Medication Dispenser.</em> 
     Instructables. 
     <a href="https://www.instructables.com/Automatic-Pill-or-Medication-Dispenser/" target="_blank" rel="noopener noreferrer">
-      https://www.instructables.com/Automatic-Pill-or-Medication-Dispenser/
+      https://www.instructables.com/The-Automatic-Pill-Dispenser/
     </a>
   </li>
 
   <li>
-    Mei, F. (2021, January 7). 
-    <em>How I automated my coffee grinder.</em> 
-    flomei.de. 
-    <a href="https://www.flomei.de/en/blog/2021/01/07/how-i-automated-my-coffee-grinder" target="_blank" rel="noopener noreferrer">
-      https://www.flomei.de/en/blog/2021/01/07/how-i-automated-my-coffee-grinder
+    Kleinsinger, F. (2018). 
+    <em>The Unmet challenge of Medication Nonadherence.</em> 
+    PubMed Central (PMC). 
+    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11993143/" target="_blank" rel="noopener noreferrer">
+      https://pmc.ncbi.nlm.nih.gov/articles/PMC11993143/
+    </a>
+  </li>
+
+  <li>
+    Singh, R. (2026, March 11). 
+    <em>How I Built an Automatic Pill Dispenser with ESP32: A Complete Guide.</em> 
+    Medium. 
+    <a href="https://medium.com/@wricha.singh01/how-i-built-an-automatic-pill-dispenser-with-esp32-a-complete-guide-3fc65779309c" target="_blank" rel="noopener noreferrer">
+      https://medium.com/@wricha.singh01/how-i-built-an-automatic-pill-dispenser-with-esp32-a-complete-guide-3fc65779309c
+    </a>
+  </li>
+
+  <li>
+    Instructables Community. (2018, December 31). 
+    <em>The Automatic Pill Dispenser.</em> 
+    Instructables. 
+    <a href="https://www.instructables.com/The-Automatic-Pill-Dispenser/" target="_blank" rel="noopener noreferrer">
+      https://www.instructables.com/The-Automatic-Pill-Dispenser/
+    </a>
+  </li>
+
+  <li>
+    Surendra, E. (n.d.). 
+    <em>Smart-MediBox: Smart Medibox using an ESP32 to remind users to take their medicine on time.</em> 
+    GitHub. 
+    <a href="https://github.com/eshansurendra/Smart-MediBox" target="_blank" rel="noopener noreferrer">
+      https://github.com/eshansurendra/Smart-MediBox
     </a>
   </li>
 </ul>
+
 
 
 
